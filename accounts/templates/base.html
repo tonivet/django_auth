@@ -1,0 +1,37 @@
+{% load static %}
+{% load django_bootstrap5 %}
+<!DOCTYPE html>
+<html class="h-100">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'account.css' %}">
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <title>{% block title %}Django Auth Tutorial{% endblock %}</title>
+  </head>
+
+  <body class="h-100">
+    <div class="d-flex flex-column h-100">
+      {% include "navbar.html" %}
+
+      <main class="container-fluid col-md-10 flex-grow-1">
+        {% if messages %}
+          {% for message in messages  %}
+              <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                  {{ message }}
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+          {% endfor %}
+        {% endif %}
+
+        {% block content %}{% endblock %}
+
+      </main>
+
+      {% include "footer.html" %}
+    </div>
+  </body>
+
+</html>

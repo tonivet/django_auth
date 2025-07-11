@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<h2> Profile info:</h2>
+<div class="d-flex">
+    <div class="me-2 align-content-center">
+        <img class="profile-pic" src="{{user.userprofile.image.url}}">
+    </div>
+    <div class="align-content-center ">
+        <p  class="m-0">First name: {{ user.first_name | default_if_none:""  }} </p>
+        <p  class="m-0">Last name: {{ user.last_name | default_if_none:"" }}</p>
+        <p  class="m-0">Gender: {{ user.userprofile.get_sex_display | default_if_none:"" }}</p>
+        <p  class="m-0">City: {{ user.userprofile.city | default_if_none:"" }}</p>
+        <p  class="m-0">Country: {{ user.userprofile.country | default_if_none:"" }}</p>
+        <p  class="m-0">Email: {{ user.email | default_if_none:"" }}</p>
+        <p  class="m-0"><a href="{% url 'edit-profile' %}" class="text-decoration-none">Edit profile</a></p>
+        <p  class="m-0"><a href="{% url 'password_change' %}" class="text-decoration-none">Change password</a></p>
+        <p  class="m-0"><a href="{% url 'delete-profile' %}" class="text-decoration-none">Delete profile</a></p>
+    </div>
+</div>
+
+{% endblock %}

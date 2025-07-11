@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}Edit profile{% endblock %}
+
+{% block content %}
+
+{% if form.errors %}
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            {% for field in form  %}
+                {% for error in field.errors %}
+                    <strong>{{ field.label }}</strong><span>{{ error|escape }}</strong>
+                {% endfor %}
+            {% endfor %}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+{% endif %}
+
+    <div class="row h-100 justify-content-center align-items-center">
+        <form class="col-md-6" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <h2>Edit profile</h2>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">First name</label>
+                <input type="text" name="first_name" value="{{ user.first_name }}" class="form-control" id="exampleInputEmail1">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Last name</label>
+                <input type="text" name="last_name" value="{{ user.last_name }}" class="form-control" id="exampleInputEmail1">
+            </div>
+            <div class="mb-3">
+                <label for="sex">Gender:</label>
+                <select id="sex" name="sex">
+                    {% for value, name in user.userprofile.SEX_CHOICES  %}
+                        <option value="{{ value }}" {% if name == user.userprofile.get_sex_display %}selected{% endif %}>{{ name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">City</label>
+                <input type="text" name="city" value="{{ user.userprofile.city | default_if_none:"" }}" class="form-control" id="exampleInputEmail1">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Country</label>
+                <input type="text" name="country" value="{{ user.userprofile.country | default_if_none:"" }}" class="form-control" id="exampleInputEmail1">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email</label>
+                <input type="email" name="email" value="{{ user.email }}" class="form-control" id="exampleInputEmail1">
+            </div>
+            <div class="mb-3">
+                <label for="profile-pic" class="form-label">Image:</label>
+                <input type="file" name="image" id="profile-pic">
+            </div>
+            <button type="submit" class="btn btn-primary">Update</button>
+        </form>
+    </dev>
+
+
+{% endblock %}
