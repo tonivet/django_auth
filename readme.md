@@ -23,7 +23,8 @@ source .venv/bin/activate
 python3 -m pip install -r requirements.txt
 ```
 
-For docker deployment first make .env file and put there at least these variables PIPELINE, SECRET_KEY, EMAIL_HOST_USER, EMAIL_HOST_PASSWORD.
+For docker deployment first make .env file and put there at least these variables: PIPELINE=production, SECRET_KEY, EMAIL_HOST_USER, EMAIL_HOST_PASSWORD, HOST_URL.
+You can generate SECRET_KEY on https://djecrety.ir/
 
 ```bash
 docker compose up -d

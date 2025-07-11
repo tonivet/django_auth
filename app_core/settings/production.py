@@ -15,7 +15,7 @@ SECRET_KEY = get_secret('SECRET_KEY')
 DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
-CSRF_TRUSTED_ORIGINS = ['https://django.feedmix.eu', 'http://127.0.0.1']
+CSRF_TRUSTED_ORIGINS = [get_secret('HOST_URL'), 'http://127.0.0.1']
 
 # Application definition
 
@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_bootstrap5',
     'accounts',
 ]
 
