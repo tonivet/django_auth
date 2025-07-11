@@ -1,6 +1,6 @@
 # Django Authentication Project
 
-Simple web authentication system with django. Extends build in django authentication system with adding some additional data for the user like city, country, gender and profile picture in separate sql table. Frontend is basic, made with bootsrap 5.
+Simple web authentication system with django. Extends build in django authentication system with adding some additional data for the user like city, country, gender and profile picture in separate sql table. Frontend is basic, made with bootsrap 5.<br  />
 User:
 * can register
 * login
