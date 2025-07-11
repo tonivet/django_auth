@@ -1,13 +1,13 @@
 # Django Authentication Project
 
 Simple web authentication system with django. Extends build in django authentication system with adding some additional data for the user like city, country, gender and profile picture in separate sql table. Frontend is basic, made with bootsrap 5.<br  />
-User:
-* can register
+User can:
+* sign up
 * login
 * logout
 * change password
 * change profile data
-* reset password with send email
+* reset password (with reset link send to email)
 * delete account
 
 app_core is django main project folder, accounts app is where are upgrades to authentication system. 
