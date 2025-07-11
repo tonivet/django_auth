@@ -10,8 +10,8 @@ User can:
 * reset password (with reset link send to email)
 * delete account
 
-app_core is django main project folder, accounts app is where are upgrades to authentication system. 
-Django settings.py file is moved to settings folder and separated to two files local.py for local development and production.py for deployment. Switching to production.py is done by system environment PIPELINE = production. Email backend is ready to work with gmail but you can switch to any other mail provider in the settings file. If you use decide to gmail first you have to create apps password smtp. For more information https://support.google.com/mail/answer/185833?hl=en
+app_core is django main project folder, accounts app is where are upgrades to authentication system are made.<br  />
+Django settings.py file is moved to settings folder and separated to two files local.py for local development and production.py for deployment. Switching to production.py is done by system environment PIPELINE = production. Email backend is ready to work with gmail but you can switch to any other mail provider in the settings file. If you decide to gmail, first you have to create apps password smtp in gmail. For more information https://support.google.com/mail/answer/185833?hl=en
 Project is ready for docker deployment. 
 
 ## Installation
