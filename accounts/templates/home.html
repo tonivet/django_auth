@@ -1,15 +1,12 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}Home{% endblock %}
 
 {% block content %}
 <dev class"mt-5">
-{% comment %} {% if user.is_authenticated %}
-    
-{% else %} {% endcomment %}
     <div class="d-flex justify-content-center">
-        <img class="img-fluid" src="{{STATIC_URL}}media/welcome.png">
+        <img class="img-fluid" src="{% static "media/welcome.png" %}">
     </div>
-{% comment %} {% endif %} {% endcomment %}
 </dev>  
 {% endblock %}

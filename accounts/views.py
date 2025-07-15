@@ -32,7 +32,7 @@ class UserEditView(LoginRequiredMixin, UpdateView):
                 return render(request, 'registration/edit_profile.html', {'u_form':u_form, 'p_form': p_form })
             u_form.save()
             p_form.save()
-            return redirect('home')
+            return redirect('profile')
         u_form = UserUpdateForm()
         p_form = UserProfileUpdateForm()
         return render(request, 'registration/edit_profile.html', {'u_form':u_form , 'p_form': p_form})

@@ -13,7 +13,7 @@ services:
     env_file: ".env"
     labels:
       - traefik.enable=true
-      - traefik.http.routers.django.rule=Host(`${HOST_URL}`)
+      - traefik.http.routers.django.rule=Host(`your_domain_here`)
       - traefik.http.routers.django.entrypoints=websecure
       - traefik.http.routers.django.tls=true
       - traefik.http.routers.django.tls.certresolver=production
