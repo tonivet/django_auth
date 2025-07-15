@@ -4,3 +4,4 @@ Pipfile
 Pipfile.lock
 local.py
 db.sqlite3
+staticfiles/
